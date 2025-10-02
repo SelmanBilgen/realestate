@@ -1,0 +1,91 @@
+{
+  "name": "RealEstateProject",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Project title"
+    },
+    "periphery": {
+      "type": "string",
+      "description": "Athens area/periphery location"
+    },
+    "target_cost": {
+      "type": "number",
+      "description": "Target cost in EUR"
+    },
+    "target_selling_price": {
+      "type": "number",
+      "description": "Target selling price in EUR"
+    },
+    "size": {
+      "type": "number",
+      "description": "Size in square meters"
+    },
+    "bedrooms": {
+      "type": "integer",
+      "description": "Number of bedrooms"
+    },
+    "bathrooms": {
+      "type": "integer",
+      "description": "Number of bathrooms"
+    },
+    "photos_before": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Photos before renovation URLs"
+    },
+    "photos_3d_render": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "3D render photos URLs"
+    },
+    "photos_after": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Photos after renovation URLs"
+    },
+    "golden_visa_eligible": {
+      "type": "boolean",
+      "description": "Eligible for Golden Visa program"
+    },
+    "description": {
+      "type": "string",
+      "description": "Project description"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Property features"
+    },
+    "completion_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected completion date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "reserved",
+        "sold"
+      ],
+      "default": "available",
+      "description": "Property status"
+    }
+  },
+  "required": [
+    "title",
+    "periphery",
+    "target_selling_price",
+    "size"
+  ]
+}
