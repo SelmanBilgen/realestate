@@ -1,13 +1,13 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card.jsx";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
+} from "@/components/ui/select.jsx";
+import { Badge } from "@/components/ui/badge.jsx";
 
 export default function ProjectFilters({ filters, setFilters, projects }) {
   const uniquePeripheries = [

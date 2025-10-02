@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+import { createPageUrl } from "@/utils.js";
 import { Building2, LogOut, Crown, Lock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { User } from "@/entities/User";
+import { Button } from "@/components/ui/button.jsx";
+import { Input } from "@/components/ui/input.jsx";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card.jsx";
+import { User } from "@/Entities/User.js";
 
 export default function Layout({ children, currentPageName }) {
   const location = useLocation();

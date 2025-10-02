@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { RealEstateProject } from "@/entities/RealEstateProject";
-import ProjectCard from "../Components/projects/ProjectCard";
-import ProjectFilters from "../components/projects/ProjectFilters";
-import { Skeleton } from "@/components/ui/skeleton";
+import { RealEstateProject } from "@/Entities/RealEstateProject.js";
+import ProjectCard from "@/Components/projects/ProjectCard.jsx";
+import ProjectFilters from "@/Components/projects/ProjectFilters.jsx";
+import { Skeleton } from "@/components/ui/skeleton.jsx";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);

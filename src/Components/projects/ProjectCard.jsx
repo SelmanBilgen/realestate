@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+import { createPageUrl } from "@/utils.js";
 import { MapPin, Ruler, Crown, ArrowRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card.jsx";
+import { Badge } from "@/components/ui/badge.jsx";
+import { Button } from "@/components/ui/button.jsx";
 
 export default function ProjectCard({ project }) {
   const featuredImage =

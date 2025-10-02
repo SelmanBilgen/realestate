@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { RealEstateProject } from "@/entities/RealEstateProject";
-import { UploadFile } from "@/integrations/Core";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { RealEstateProject } from "@/Entities/RealEstateProject.js";
+import { UploadFile } from "@/integrations/Core.js";
+import { Button } from "@/components/ui/button.jsx";
+import { Input } from "@/components/ui/input.jsx";
+import { Textarea } from "@/components/ui/textarea.jsx";
+import { Label } from "@/components/ui/label.jsx";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import ImageUploadManager from "./ImageUploadManager";
+} from "@/components/ui/select.jsx";
+import { Checkbox } from "@/components/ui/checkbox.jsx";
+import ImageUploadManager from "./ImageUploadManager.jsx";
 import { Loader2 } from "lucide-react";
 
 const emptyProject = {

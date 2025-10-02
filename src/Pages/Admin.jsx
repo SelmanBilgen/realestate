@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { RealEstateProject } from "@/entities/RealEstateProject";
-import { Button } from "@/components/ui/button";
+import { RealEstateProject } from "@/Entities/RealEstateProject.js";
+import { Button } from "@/components/ui/button.jsx";
 import { Plus, Edit, Trash2 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card.jsx";
 import {
   Table,
   TableBody,
@@ -10,7 +10,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "@/components/ui/table.jsx";
 import {
   Dialog,
   DialogContent,
@@ -18,9 +18,9 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialog.jsx";
 
-import ProjectForm from "../components/admin/ProjectForm";
+import ProjectForm from "@/Components/admin/ProjectForm.jsx";
 
 export default function AdminPage() {
   const [projects, setProjects] = useState([]);

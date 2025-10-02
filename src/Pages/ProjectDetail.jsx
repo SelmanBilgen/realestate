@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { RealEstateProject } from "@/entities/RealEstateProject";
+import { RealEstateProject } from "@/Entities/RealEstateProject.js";
 import { useNavigate } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+import { createPageUrl } from "@/utils.js";
 import {
   ArrowLeft,
   MapPin,
@@ -13,12 +13,12 @@ import {
   CheckCircle,
   XCircle,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import ImageGallery from "../components/project-detail/ImageGallery";
-import ProjectFeatures from "../components/project-detail/ProjectFeatures";
-import ContactForm from "../components/project-detail/ContactForm";
+import { Button } from "@/components/ui/button.jsx";
+import { Badge } from "@/components/ui/badge.jsx";
+import { Card, CardContent } from "@/components/ui/card.jsx";
+import ImageGallery from "@/Components/project-detail/ImageGallery.jsx";
+import ProjectFeatures from "@/Components/project-detail/ProjectFeatures.jsx";
+import ContactForm from "@/Components/project-detail/ContactForm.jsx";
 
 export default function ProjectDetail() {
   const [project, setProject] = useState(null);
