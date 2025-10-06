@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { User } from "@/entities/User";
 
-export default function Layout({ children, currentPageName }) {
+export default function Layout({ children }) {
   const location = useLocation();
   const [user, setUser] = useState(null);
   const [needsPasscode, setNeedsPasscode] = useState(false);
@@ -27,7 +27,7 @@ export default function Layout({ children, currentPageName }) {
       if (!currentUser.passcode) {
         setNeedsPasscode(true);
       }
-    } catch (error) {
+    } catch {
       // User not authenticated, redirect to login
       await User.loginWithRedirect(window.location.href);
     }
@@ -53,7 +53,7 @@ export default function Layout({ children, currentPageName }) {
 
       setNeedsPasscode(false);
       setError("");
-    } catch (error) {
+    } catch {
       setError("Authentication failed. Please try again.");
     }
   };
@@ -139,71 +139,53 @@ export default function Layout({ children, currentPageName }) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <style>
-        {`
-          :root {
-            --primary-navy: #1e293b;
-            --primary-gold: #d4af37;
-            --accent-blue: #3b82f6;
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-          }
-        `}
-      </style>
-
-      {/* Premium Header */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-slate-200/50 sticky top-0 z-50">
+    <div className="min-h-screen bg-[#F5F8FB]">
+      {/* Header */}
+      <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <Link
-              to={createPageUrl("Projects")}
-              className="flex items-center space-x-3 group cursor-pointer hover:scale-105 transition-all duration-300"
-            >
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 p-1">
-                <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68d80d08b76cbe09750cf182/31184185b_RIGEL1.png"
-                  alt="Rigel Logo"
-                  className="w-full h-full object-contain"
-                />
+            {/* Logo and Company Name */}
+            <Link to={createPageUrl("Projects")} className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                <Building2 className="w-6 h-6 text-purple-600" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-slate-800 group-hover:text-blue-700 transition-colors duration-300">
+                <h1 className="text-xl font-bold text-gray-800">
                   Rigel Premium Homes
                 </h1>
-                <p className="text-sm text-slate-500 font-medium group-hover:text-blue-600 transition-colors duration-300">
+                <p className="text-sm text-gray-500">
                   Real Estate Projects
                 </p>
               </div>
             </Link>
 
+            {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <Link
                 to={createPageUrl("Projects")}
-                className={`font-semibold transition-all duration-200 hover:scale-105 ${
+                className={`font-semibold pb-1 ${
                   location.pathname === createPageUrl("Projects")
-                    ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-                    : "text-slate-600 hover:text-blue-600"
+                    ? "text-blue-600 border-b-2 border-blue-600"
+                    : "text-gray-600 hover:text-blue-600"
                 }`}
               >
                 All Projects
               </Link>
-              <div className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-full border border-amber-200">
-                <Crown className="w-4 h-4 text-amber-600" />
-                <span className="text-sm font-medium text-amber-700">
-                  Premium Access
-                </span>
-              </div>
+              <span className="text-sm font-semibold text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full">
+                Premium Access
+              </span>
             </nav>
 
-            <Button
-              variant="ghost"
-              onClick={handleLogout}
-              className="text-slate-600 hover:text-slate-800 hover:bg-slate-100 hover:scale-105 transition-all duration-200"
-            >
-              <LogOut className="w-4 h-4 mr-2" />
-              Logout
-            </Button>
+            {/* User Actions */}
+            <div className="flex items-center space-x-4">
+               <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
+               <button
+                onClick={handleLogout}
+                className="text-sm font-medium text-gray-600 hover:text-gray-900"
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -211,13 +193,14 @@ export default function Layout({ children, currentPageName }) {
       {/* Main Content */}
       <main className="flex-1">{children}</main>
 
-      {/* Premium Footer */}
-      <footer className="bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      {/* Footer */}
+      <footer className="bg-[#0A3D62] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+            {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1">
+                 <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1">
                   <img
                     src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68d80d08b76cbe09750cf182/31184185b_RIGEL1.png"
                     alt="Rigel Logo"
@@ -226,52 +209,50 @@ export default function Layout({ children, currentPageName }) {
                 </div>
                 <span className="text-xl font-bold">Rigel Premium Homes</span>
               </div>
-              <p className="text-slate-300 leading-relaxed">
-                Exclusive real estate opportunities in Athens, Greece. Golden
-                Visa eligible properties.
+              <p className="text-gray-300 leading-relaxed text-sm">
+                Exclusive real estate opportunities in Athens, Greece. Golden Visa eligible properties.
               </p>
             </div>
 
+            {/* Contact Info */}
             <div>
-              <h3 className="font-semibold mb-4">Contact Information</h3>
-              <div className="space-y-2 text-slate-300">
+              <h3 className="font-semibold mb-4 text-lg">Contact Information</h3>
+              <div className="space-y-2 text-gray-300 text-sm">
                 <p>📍 Athens, Greece</p>
                 <p>📧 rigelhospitalitygr@gmail.com</p>
                 <p>📞 +30 697 225 0118</p>
               </div>
             </div>
 
+            {/* Golden Visa */}
             <div>
-              <h3 className="font-semibold mb-4">Golden Visa Program</h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                Eligible properties for Greece's Golden Visa program. Invest
-                €250,000+ and gain European residency.
+              <h3 className="font-semibold mb-4 text-lg">Golden Visa Program</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Eligible properties for Greece's Golden Visa program. Invest €250,000 and gain European residency.
               </p>
             </div>
+
+            {/* Quick Links */}
             <div>
-              <h3 className="font-semibold mb-4">Quick Links</h3>
-              <div className="space-y-2 text-slate-300">
-                <Link
-                  to={createPageUrl("Projects")}
-                  className="hover:text-white"
-                >
-                  All Projects
-                </Link>
+              <h3 className="font-semibold mb-4 text-lg">Quick Links</h3>
+              <div className="space-y-2 text-gray-300 text-sm">
+                <Link to={createPageUrl("Projects")} className="hover:text-white">All Projects</Link>
                 <br />
-                <Link to={createPageUrl("Admin")} className="hover:text-white">
-                  Admin Panel
-                </Link>
+                <Link to={createPageUrl("Admin")} className="hover:text-white">Admin Panel</Link>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400">
-            <p>
-              &copy; 2024 Rigel Premium Homes Real Estate. All rights reserved.
-            </p>
+          <div className="border-t border-blue-800 mt-12 pt-8 text-center text-gray-400 text-sm">
+            <p>© 2024 Rigel Premium Homes Real Estate. All rights reserved.</p>
           </div>
         </div>
       </footer>
+
+      {/* Floating Edit Button */}
+      <button className="fixed bottom-5 right-5 bg-black text-white px-4 py-2 rounded-lg shadow-lg text-sm">
+        Edit with Base44
+      </button>
     </div>
   );
 }
