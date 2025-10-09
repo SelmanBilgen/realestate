@@ -1,0 +1,58 @@
+.cta-banner {
+  background: linear-gradient(to right, var(--cta-gradient-start), var(--cta-gradient-end));
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  margin: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-subheading {
+  font-size: 1.125rem;
+  color: #e0e0e0;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.cta-button.primary {
+  background-color: #ff69b4; /* Pink */
+  color: white;
+  border: 2px solid #ff69b4;
+}
+
+.cta-button.primary:hover {
+  background-color: #ff85c1;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-button.secondary:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
