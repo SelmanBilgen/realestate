@@ -2,105 +2,92 @@ import React from 'react';
 import ProjectCard from '../ProjectCard/ProjectCard';
 import './ProjectsGrid.css';
 
-const projects = [
+export const projects = [
   {
+    id: 1,
     location: 'Neos Kosmos, Athens',
     title: 'One Bedroom Apartment in Neos Kosmos',
     price: '€250,000',
     pricePerSqm: '€6,250/m²',
     area: '40m²',
-    imageUrl: 'https://via.placeholder.com/400x250',
+    imageUrl: 'https://via.placeholder.com/400x250/1E88E5/fff?text=Neos+Kosmos',
     status: 'Available',
     goldenVisa: true,
+    bedrooms: 1,
+    bathrooms: 1,
+    completion: 2026,
+    about: 'Compact but stylish studio in central Athens close to many touristic attractions.',
+    features: ['Compact Design', 'Central Location', 'Cultural Area', 'Investment Opportunity'],
+    financials: {
+      targetSellingPrice: '€220,000',
+      pricePerSqmDetail: '€5,500',
+      targetCost: '€125,000',
+      roi: '76%',
+      purchasePrice: '€95,000',
+      transferFees: '€9,000',
+      totalPurchaseCost: '€104,000',
+      renovationEstimate: '€25,000',
+      totalProjectCost: '€129,000',
+      targetSalesPrice: '€220,000',
+      profit: '€91,000',
+      taxRate: '23%',
+      profitAfterTax: '€70,070',
+      capitalOwnerShare: '€52,552.5',
+      managementShare: '€17,517.5',
+    },
+    images: {
+      before: ['https://via.placeholder.com/800x500/ccc/fff?text=Before+1'],
+      renders: ['https://via.placeholder.com/800x500/1E88E5/fff?text=Living+Room', 'https://via.placeholder.com/800x500/1E88E5/fff?text=Bedroom'],
+      after: ['https://via.placeholder.com/800x500/28a745/fff?text=After+1'],
+    },
   },
   {
+    id: 2,
     location: 'Kallithea, Athens',
     title: 'Two Bedroom Apartment in Kallithea',
     price: '€175,000',
     pricePerSqm: '€2,917/m²',
     area: '60m²',
-    imageUrl: 'https://via.placeholder.com/400x250',
+    imageUrl: 'https://via.placeholder.com/400x250/28a745/fff?text=Kallithea',
     status: 'Available',
     goldenVisa: false,
+    bedrooms: 2,
+    bathrooms: 1,
+    completion: 2025,
+    about: 'Spacious two-bedroom apartment perfect for families, located in a quiet neighborhood.',
+    features: ['Family Friendly', 'Quiet Area', 'Good Transport Links'],
+    financials: {
+        targetSellingPrice: '€210,000',
+        pricePerSqmDetail: '€3,500',
+        targetCost: '€140,000',
+        roi: '50%',
+        purchasePrice: '€110,000',
+        transferFees: '€10,000',
+        totalPurchaseCost: '€120,000',
+        renovationEstimate: '€20,000',
+        totalProjectCost: '€140,000',
+        targetSalesPrice: '€210,000',
+        profit: '€70,000',
+        taxRate: '23%',
+        profitAfterTax: '€53,900',
+        capitalOwnerShare: '€40,425',
+        managementShare: '€13,475',
+    },
+    images: {
+      before: ['https://via.placeholder.com/800x500/ccc/fff?text=Before+Kallithea'],
+      renders: ['https://via.placeholder.com/800x500/28a745/fff?text=Living+Room+Kallithea'],
+      after: ['https://via.placeholder.com/800x500/ff9800/fff?text=After+Kallithea'],
+    },
   },
-  {
-    location: 'Kallithea, Athens',
-    title: 'Three Bedroom Apartment in Kallithea',
-    price: '€230,000',
-    pricePerSqm: '€3,067/m²',
-    area: '75m²',
-    imageUrl: 'https://via.placeholder.com/400x250',
-    status: 'Reserved',
-    goldenVisa: true,
-  },
-  {
-    location: 'Moschato, Athens',
-    title: 'Three Bedroom Maisonette in Moschato',
-    price: '€250,000',
-    pricePerSqm: '€2,273/m²',
-    area: '110m²',
-    imageUrl: 'https://via.placeholder.com/400x250',
-    status: 'Available',
-    goldenVisa: true,
-  },
-  {
-    location: 'Nikis, Athens',
-    title: 'Two Bedroom Apartment in Nikis',
-    price: '€250,000',
-    pricePerSqm: '€4,237/m²',
-    area: '59m²',
-    imageUrl: 'https://via.placeholder.com/400x250',
-    status: 'Sold',
-    goldenVisa: true,
-  },
-  {
-    location: 'Afentouli, Athens',
-    title: 'Three-Apartment Building in Afentouli',
-    price: '€800,000',
-    pricePerSqm: '€3,636/m²',
-    area: '220m²',
-    imageUrl: 'https://via.placeholder.com/400x250',
-    status: 'Available',
-    goldenVisa: true,
-  },
-  {
-    location: 'Dafni, Athens',
-    title: 'Ten-Apartment Building in Dafni',
-    price: '€2,500,000',
-    pricePerSqm: '€35,714/m²',
-    area: '70m²',
-    imageUrl: 'https://via.placeholder.com/400x250',
-    status: 'Available',
-    goldenVisa: true,
-  },
-  {
-    location: 'Ano Patissia, Athens',
-    title: 'Seven-Apartment Building in Ano Patissia',
-    price: '€1,750,000',
-    pricePerSqm: '€3,182/m²',
-    area: '550m²',
-    imageUrl: 'https://via.placeholder.com/400x250',
-    status: 'Available',
-    goldenVisa: true,
-  },
-  {
-    location: 'Amerikis, Athens',
-    title: 'Six-Apartment Building in Amerikis',
-    price: '€1,200,000',
-    pricePerSqm: '€3,871/m²',
-    area: '310m²',
-    imageUrl: 'https://via.placeholder.com/400x250',
-    status: 'Available',
-    goldenVisa: true,
-  },
+  // Add simplified data for other projects
 ];
 
 const ProjectsGrid = () => {
   return (
     <div className="projects-grid-container">
         <div className="projects-grid">
-        {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+        {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
         ))}
         </div>
     </div>

@@ -1,3 +1,8 @@
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .project-card {
   background-color: white;
   border-radius: 12px;

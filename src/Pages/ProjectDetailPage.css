@@ -1,0 +1,33 @@
+.project-detail-page .detail-page-main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-column {
+  position: sticky;
+  top: 80px; /* Adjust based on header height */
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .project-detail-page .detail-page-main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-column {
+    position: static;
+    height: auto;
+    overflow-y: visible;
+  }
+}

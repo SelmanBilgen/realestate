@@ -1,0 +1,72 @@
+.project-info-container {
+  padding: 2rem;
+}
+
+.info-section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.feature-item {
+  background-color: #f5f8fb;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.cost-breakdown-section, .sales-profit-section {
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.cost-item, .profit-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cost-item:last-child, .profit-item:last-child {
+  border-bottom: none;
+}
+
+.cost-item.total, .profit-item.total {
+  font-weight: 700;
+}
+
+.cost-item.total span:last-child {
+  color: var(--primary-color);
+}
+
+.sales-profit-section {
+  background-color: #e8f5e9; /* Light green */
+}
+
+.profit-item.total span:last-child {
+  color: #28a745;
+}
+
+.profit-distribution {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: #555;
+}
