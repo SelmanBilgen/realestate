@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   return (
     <header className="header">
-      <div className="header-left">
+      <Link to="/" className="header-left">
         <div className="logo">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L2 7V21H22V7L12 2Z" fill="#A45DE9"/>
@@ -17,10 +18,14 @@ const Header = () => {
           <strong>Rigel Premium Homes</strong>
           <small>Real Estate Projects</small>
         </div>
-      </div>
+      </Link>
       <nav className="header-center">
-        <a href="#" className="nav-link active">All Projects</a>
-        <a href="#" className="nav-link premium-access">Premium Access</a>
+        <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+          All Projects
+        </NavLink>
+        <NavLink to="/premium" className={({ isActive }) => isActive ? "nav-link premium-access active" : "nav-link premium-access"}>
+          Premium Access
+        </NavLink>
       </nav>
       <div className="header-right">
         <div className="user-profile">
@@ -30,7 +35,7 @@ const Header = () => {
             <path d="M12 14C9.33 14 7 15.33 7 17V18H17V17C17 15.33 14.67 14 12 14Z" fill="white"/>
           </svg>
         </div>
-        <a href="#" className="logout-link">Logout</a>
+        <Link to="/logout" className="logout-link">Logout</Link>
       </div>
     </header>
   );
